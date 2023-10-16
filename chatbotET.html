@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1>こんにちは</h1>
-    </body>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <title>ETロボコン x chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ETロボコン × chatbot</h1>
+  <input type="text" id="input" placeholder="知りたいことやキーワードを入力してください">
+  <button onclick="search()">検索</button>
+  <div id="output"></div>
+
+<script>
+  const classroomData = {
+    'モデル相談': '606',
+  };
+
+  function searchClassroom() {
+    const inputElement = document.getElementById('input');
+    const outputElement = document.getElementById('output');
+
+    const keyword = inputElement.value.trim();
+    const classroom = classroomData[keyword];
+
+    if (classroom) {
+      outputElement.innerHTML = `<p><strong>${keyword}</strong>は<strong>${classroom}</strong>です。</p>`;
+    } else {
+      outputElement.innerHTML = `<p>該当する授業名やキーワードの教室は見つかりませんでした。</p>`;
+    }
+  }
+
+  function search(){
+    const inputElement = document.getElementById('input');
+    const outputElement = document.getElementById('output');
+
+    outputElement.innerHTML='<p>見つかりませんでした。</p>';
+  }
+</script>
+</body>
 </html>

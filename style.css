@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+text-align: center;
+}
+
+input[type="text"] {
+width: 70%;
+padding: 8px;
+font-size: 16px;
+}
+
+button {
+padding: 16px 32px;
+font-size: 16px;
+cursor: pointer;
+}
+
+#output {
+margin-top: 20px;
+}
+
+#output p {
+font-size: 16px;
+}
+
+#output strong {
+color: #0066cc;
+}

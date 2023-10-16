@@ -4,6 +4,7 @@ body {
     background-image: url('ETrobo.png');
     background-size: cover;
     background-repeat:no-repeat;
+    background-color: rgb(93, 162, 194);
 }
 
 .container{

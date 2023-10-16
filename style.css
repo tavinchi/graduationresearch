@@ -1,6 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-image:url("C:\FINAL\graduationresearch\ETrobo.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.container{
+    text-align: center;
+    padding: 20px;
 }
 
 h1 {

@@ -24,14 +24,18 @@ font-size: 16px;
 }
 
 button {
-padding: 16px 32px;
-font-size: 16px;
+padding: 10px 30px;
+font-size: 20px;
 cursor: pointer;
+color:rgb(20, 20, 20);
+background-color: #d3e9ff;
+border-radius: 10%;
+border:4px solid white;
 }
 
 #output {
 margin-top: 20px;
-margin-left:10%;
+margin-left: 10%;
 margin-right: 10%;
 }
 

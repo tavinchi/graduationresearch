@@ -5,6 +5,7 @@ body {
     background-size: cover;
     background-repeat:no-repeat;
     background-color: rgb(93, 162, 194);
+    background-color:#fffdfa;
 }
 
 .container{
@@ -30,6 +31,8 @@ cursor: pointer;
 
 #output {
 margin-top: 20px;
+margin-left:10%;
+margin-right: 10%;
 }
 
 #output p {

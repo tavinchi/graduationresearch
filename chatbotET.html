@@ -10,7 +10,8 @@
 
   <h1>ETロボコン × chatbot</h1>
   <input type="text" id="input" placeholder="知りたいことやキーワードを入力してください">
-  <button onclick="search()">検索</button>
+  <button id="changecolor" onclick="search()">検索</button>
+</div>
   <div id="output"></div>
 
 <script>
@@ -32,13 +33,20 @@
     }
   }
 
-  function search(){
+    const changecolorbutton=document.getElementById("changecolor");
+    function changeBackgroundColor(){
+        document.body.style.backgroundImage="none";
+    }
+    changecolorbutton.addEventListener("click",changeBackgroundColor);
+
+    function search(){
+    
     const inputElement = document.getElementById('input');
     const outputElement = document.getElementById('output');
 
     outputElement.innerHTML='見つかりませんでした。今後の性能アップに期待してお待ちください。何か不明な点後ございましたらcakm1200141@gn.iwasaki.ac.jp上記のメールまで質問してください。ほかに困りごとがございましたら神奈川県横浜市岩崎学園情報科学専門学校4年松尾虎太郎まで直接お話ください';
-  }
+    }
 </script>
-  </div>
+  
 </body>
 </html>

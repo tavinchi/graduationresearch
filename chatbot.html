@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <title>ロボコン x chatbot</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon.ico">
+   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ロボコン × Chatbot</title>
+   <link rel="stylesheet" href="style.css">
+
+   <script type="text/javascript">
+      $(function(){
+         // フォームの送信イベントをキャッチ
+         $('form').submit(function(e) {
+            e.preventDefault(); // フォームのデフォルトの動作を防ぐ
+
+            // フォームデータを取得
+            var formData = $(this).serialize();
+
+            // Ajaxリクエストを送信
+            $.ajax({
+               url: './test.py',
+               type: 'post',
+               data: formData
+            }).done(function(data){
+ 
+               $('#result').html(data);
+            }).fail(function(){
+               console.log('failed');
+            });
+         });
+      });
+   </script>
+   <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
-  <div class="container">
-
-  <h1>ロボコン × chatbot</h1>
-
-  <form id="myForm" onsubmit="submitForm(); return false;">
-    <input type="text" id="inputData" name="inputData" required>
-    <button type="submit" onclick="submitForm()">検索</button>
-  </form>
-
-  </div>
-  <div id="result"></div>
-
-  <script>
-    function submitForm() {
-        var inputData = document.getElementById("inputData").value;
-        var xhr = new XMLHttpRequest();
-        
-        xhr.open("POST", "/python/test.py", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                document.getElementById("result").innerHTML = xhr.responseText;
-            }
-        };
-        
-        xhr.send("inputData=" + inputData);
-    }
-  </script>
-
+   <div class="container">
+      <h1>ロボコン × Chatbot</h1>
+      <form id="myForm">
+         <input type="text" id="data" name="data">
+         <input type="submit" id="button" value="検索">
+      </form>
+   </div>
+   <div id="result"></div>
 </body>
 </html>

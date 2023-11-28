@@ -29,6 +29,12 @@ if check_word_match(storage.getfirst('data','匿名'),"モデル"):
     result="モデル相談会は作ったモデルで疑問に思っているところなどを聞く場所です。"
 elif check_word_match(storage.getfirst('data','匿名'), "ロボ"):
     result="ETロボコンとは初心者エンジニアを対象としたロボットコンテストです。"
+elif check_word_match(storage.getfirst('data','匿名'), "コミュニケーション"):
+    result="コミュニケーションをとることはむずかしいことです。あきらめましょう。"
+elif check_word_match(storage.getfirst('data','匿名'), "腹"):
+    result="私も腹が減りました。"
+elif check_word_match(storage.getfirst('data','匿名'), "勉強"):
+    result="paizaなどでプログラミングの勉強をしましょう。"
 else:
     result="一致しませんでした"
 
